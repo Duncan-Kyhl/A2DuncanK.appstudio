@@ -1,4 +1,4 @@
-// Switch Case
+// Using If ... Else 
 
 let firstName = prompt("Please enter your first name:")
 let stateAbbr = prompt("Please enter the two letter abbreviation for the state in which you are currently located (ex: NE for Nebraska):")
@@ -10,18 +10,14 @@ const messages = [
   "wear a warm coat, hat and gloves. Maybe a scarf too."
   ]
 
-switch (true) {
-    case tempF < 32 && stateAbbr == 'NE':
-        console.log(`${firstName}, because it's ${tempF} degrees Fahrenheit, you should ${messages[0]}`)
-        break;
-    case tempF > 50 && tempF < 70 && stateAbbr == 'FL': 
-        console.log(`${firstName}, because it's ${tempF} degrees Fahrenheit, you should ${messages[3]}`)
-        break;
-    case tempF >= 32 && tempF < 50 && stateAbbr === 'NE':
+if (tempF < 32) {
+    console.log(`${firstName}, because it's ${tempF} degrees Fahrenheit, you should ${messages[0]}`)
+} else if (tempF < 50) {
+    if (stateAbbr == 'NE') {
         console.log(`${firstName}, because it's ${tempF} degrees Fahrenheit, you should ${messages[1]}`)
-        break;
-    case tempF >= 32 && tempF < 50 && stateAbbr === 'FL':
+    } else if (stateAbbr == 'FL') {
         console.log(`${firstName}, because it's ${tempF} degrees Fahrenheit, you should ${messages[2]}`)
-        break;
-    default:
+    }
+} else if (tempF < 70) {
+     console.log(`${firstName}, because it's ${tempF} degrees Fahrenheit, you should ${messages[3]}`)
 }
