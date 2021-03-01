@@ -6,27 +6,31 @@ message to the user based on their age. It also sees if the users' name is in th
 friends array. 
 */
 
-let friends = ["Michelle", "Betty", "Bev", "Amy","Marsha"]
-let choice= prompt(`Which of my friends do you want to invite over? ${friends[1]}, ${friends[2]}, ${friends[3]}, ${friends[4]}, or ${friends[5]}?`)
+let friends = ["Michelle", "Betty", "Bev", "Amy", "Marsha"]
+let choice = prompt(`Which of my friends do you want to invite over? ${friends[1]}, ${friends[2]}, ${friends[3]}, ${friends[4]}, or ${friends[5]}?`)
 
 let userName = prompt("Enter your first name please. ")
 let userAge = prompt("Enter your current age in years. ")
 
-if age > 20
+if (userAge > 20) {
     messageNum = 1
-else if age > 30 AND < 40
+} else if (userAge > 30 && userAge < 40) {
     messageNum = 2
-else
+} else {
     messageNum = 3
-    
-swich (messagenum) {
-case '1':
-    alert("You are in your twenties!")
-    break
-case '2':
-    alet("You are in your thirties! ")
-case '3':
-    alert("You are over 40! Wow!)
-    break
-default:
-    alert("I have no idea how old you are. ")
+}
+
+switch (messageNum) {
+  case 1:
+      alert("You are in your twenties!")
+      break;
+  case 2:
+      alert("You are in your thirties!")
+      break;
+  case 3:
+      alert("You are over 40! Wow!")
+      break;
+  default:
+      alert("I have no idea how old you are.")
+      break;
+}
